@@ -87,7 +87,7 @@ ul {    width: 100%;
     top: 0;
 }
 #Logo {
-    width: 50%;
+    width: 30%;
     display: flex;
 }
 .side-menu:checked ~ .hamb .hamb-line::after{
@@ -125,20 +125,22 @@ ul {    width: 100%;
     width: 100%;
 }
 @media screen and (mind-width: 768px) {
-    .menu {
-        height: 120px;
-        background-color: #d1c2f3;
+    .nav {
+        max-height: none;
+        top: 0;
+        position: relative;
+        float: right;
+        width: fit-content;
+        background-color: transparent;
     }
-    .conteudo {
-        display: flex;
+    .menu li {
+        float: left;
     }
-}
-@media screen and (min-width: 1028px) {
-    .menu {
-        height: 200px;
-        background-color: #d1c2f3;
+    .menu a:hover {
+        background-color: transparent;
+        color: var(--cor-hover);
     }
-    .conteudo {
-        display: grid;
+    .hamb {
+        display: none;
     }
 }
