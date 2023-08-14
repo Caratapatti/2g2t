@@ -6,6 +6,7 @@
     --cor-fundo: #d1c2f3;
     --cor-fonte: rgb(111, 111, 214);
     --cor-hover: pink;
+    --cor-clara-fundo:rgb(217, 176, 241);
 
 }
 a{
@@ -45,13 +46,11 @@ ul {    width: 100%;
 .nav{
     max-height: 0;
     transition: max-height .5s ease-out;
-
 }
 .hamb{
     cursor: pointer;
     float:right;
     padding: 35px 20px;
-
 }
 .hamb-line{
     background-color: var(--cor-fonte);
@@ -82,22 +81,32 @@ ul {    width: 100%;
 .side-menu:checked ~ nav{
     max-height: 100%;
 }
-.side-menu:checked ~ .hamb .hamb-line::before{
+.side-menu:checked ~ .hamb .hamb-line {
+    background: transparent;
+}
+.side-menu:checked ~ .hamb .hamb-line::before {
     transform: rotate(-45deg);
     top: 0;
-}
-#Logo {
-    width: 10%;
-    display: flex;
 }
 .side-menu:checked ~ .hamb .hamb-line::after{
     transform: rotate(45deg);
     top: 0;
 }
-
+#logo {
+    width: 200px;
+}
 .conteudo {
     width: 100%;
-    background-color: rgb(202, 149, 202);
+    background-color:  rgb(202, 149, 202);
+}
+.conteudo-info{
+    display: flex;
+}
+.img-info{
+    display: none;
+}
+.texto-info{
+    padding: 0%;
 }
 
 .rodape {
@@ -107,11 +116,11 @@ ul {    width: 100%;
 }
 .info-cinema {
     width: 100%;
-    background-color: #BE9DDF;
+    background-color:#BE9DDF;
 }
 .info-filme {
     width: 100%;
-    background-color: rgb(202, 149, 202);
+    background-color:  rgb(202, 149, 202);
 }
 .info-filme-retro {
     width: 100%;
@@ -119,12 +128,27 @@ ul {    width: 100%;
 }
 .info-destaque {
     width: 100%;
-    background-color: rgb(202, 149, 202);
+    background-color:  rgb(202, 149, 202);
 }
 .img-estilo {
     width: 100%;
 }
-@media screen and (min-width: 768px) {
+.info{
+    width: 100vw;
+    display: grid;
+
+}
+
+div[class^="item-"]{
+background-color: var(--cor-clara-fundo);
+padding: 2px;
+width: calc(100vw - 4px);
+height: 50vh;
+margin: 2px;
+grid-area: "item";
+}
+
+@media screen and (min-width: 820px) {
     .nav {
         max-height: none;
         top: 0;
@@ -142,4 +166,19 @@ ul {    width: 100%;
     .hamb {
         display: none;
     }
+    .img-info{
+        display: block;
+        
+    }
+    .info{
+        grid-template-columns: 50% 50%;
+        grid-template-areas: "item" "item";
+    }
+ }
+ @media screen and (min-width: 1024px) {
+    .info{
+        grid-template-columns: 33% 34% 33%;
+        grid-template-areas: "item" "item" "item";
+    }
+    
  }
